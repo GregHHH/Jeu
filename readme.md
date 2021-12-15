@@ -32,6 +32,10 @@ python3 generate.py {nbr_lignes} {nbr_colonnes} {pourcentage}
 python3 generate.py 8 2 40
 ```
 
-⚠️ La valeur par defaut des lignes / colonnes est de **6** en l'absence de valeurs choisies en tant qu'arguments. 
+⚠️ La valeur par defaut des lignes / colonnes est de **6** en l'absence de valeurs choisies par l'utilisateur. 
 
-⚠️ La valeur par defaut de la proportion de cellules vivantes est de **10%** en l'absence de valeurs choisies en tant qu'arguments.
+⚠️ La valeur par defaut de la proportion de cellules vivantes est de **10%** en l'absence de valeurs choisies par l'utilisateur.
+
+---
+
+## Problèmes rencontrés:
