@@ -1,19 +1,19 @@
 from generate import *
 
-frame = np.array([
-		[0, 0, 0, 0, 0, 0, 0],
-        [0, 1, 1, 1, 0, 0, 0],
-		[0, 0, 0, 0, 0, 1, 0],
-		[0, 0, 1, 0, 0, 0, 0],
-        [0, 1, 1, 1, 0, 0, 0],
-		[0, 0, 1, 0, 0, 1, 0],
-		[0, 0, 0, 0, 0, 0, 0],
-        [0, 1, 1, 1, 0, 0, 0],
-		[0, 0, 0, 0, 0, 1, 0],
-		[0, 0, 1, 1, 0, 0, 0],
-        [0, 1, 1, 1, 1, 0, 0],
-		[0, 0, 0, 0, 0, 1, 0],
-		[0, 0, 0, 0, 0, 0, 0]])
+# frame = np.array([
+# 		[0, 0, 0, 0, 0, 0, 0],
+#         [0, 1, 1, 1, 0, 0, 0],
+# 		[0, 0, 0, 0, 0, 1, 0],
+# 		[0, 0, 1, 0, 0, 0, 0],
+#         [0, 1, 1, 1, 0, 0, 0],
+# 		[0, 0, 1, 0, 0, 1, 0],
+# 		[0, 0, 0, 0, 0, 0, 0],
+#         [0, 1, 1, 1, 0, 0, 0],
+# 		[0, 0, 0, 0, 0, 1, 0],
+# 		[0, 0, 1, 1, 0, 0, 0],
+#         [0, 1, 1, 1, 1, 0, 0],
+# 		[0, 0, 0, 0, 0, 1, 0],
+# 		[0, 0, 0, 0, 0, 0, 0]])
 
 def print_frame(frame, i):
 	print(f"{frame}")
@@ -50,12 +50,12 @@ def copy_with_rules(frame):
 	return cp_frame
 
 # TODO: Verif avec les cellules qui prennent vie dans la bordure : disparition de la figure :( (encore  incrémenter la taille de la bordure à ce moment ?)
-# size_lin = int(sys.argv[2]) if len(sys.argv) >= 2 else int(6)
-# size_col = int(sys.argv[2]) if len(sys.argv) >= 3 else int(6)
-# density = int(sys.argv[2]) if len(sys.argv) >= 4 else int(15)
+size_lin = int(sys.argv[2]) if len(sys.argv) >= 2 else int(6)
+size_col = int(sys.argv[2]) if len(sys.argv) >= 3 else int(6)
+density = int(sys.argv[2]) if len(sys.argv) >= 4 else int(15)
 
 i = 0
-# frame = generate(size_lin, size_col, density)
+frame = generate(size_lin, size_col, density)
 frame = add_padding(frame)
 while True:
 	os.system('clear')
