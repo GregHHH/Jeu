@@ -40,7 +40,7 @@ python3 main.py 8 2 40
 
 si le programme est exécuté avec l'option '-c', la grille personnalisée présente dans main.py sera utilisée.
 
-```p
+```python
 python3 main.py -c
 ```
 
@@ -58,19 +58,19 @@ La première, est un simple **array**.
 
 La seconde, utilise la fonction **zeros** de **numpy** afin de créer une grille remplie de 0 aux bonnes dimensions qui ont été récupérées via **argv** de la bibliothèque **sys.** 
 
-```
+```python
 size_lin = int(sys.argv[1])
 size_col = int(sys.argv[2])
 density = int(sys.argv[3])
 ```
 
-``` ⚠️
+``` python⚠
 array = np.zeros((lin, col), dtype=int)
 ```
 
 Pour remplir le tableau aléatoire avec la bonne densité de 0, nous avons parcouru le tableau en intégralité en remplacant certains 0 par des 1. Grâce à **randint** de la bibliothèque **random**, nous avons remplacé les 0 lorsque le chiffre obtenu est inférieur à notre densité.
 
-```
+```python
 r = random.randint(1, 101)
 if r <= density and cpt <= ((lin * col) * density / 100 ):
     array[i][j] = 1
@@ -87,7 +87,7 @@ Cette partie est divisée en 2 sous parties relativement faciles à mettre en pl
 
 * Le comptage du nombre de voisins de chaque case
 
-  ```
+  ```python
   for i in range(index_line - 1, index_line + 2):
   		for j in range(index_column - 1, index_column + 2):
   			number_neighbors += paded_frame[i][j]
@@ -95,7 +95,7 @@ Cette partie est divisée en 2 sous parties relativement faciles à mettre en pl
   ```
 * L'application des règles du JDV.
 
-```
+```python
 if array[i][j] == 0 and number_neighbors == 3:
 	cp_array[i][j] = 1
 elif array[i][j] == 1 and (number_neighbors == 2 or number_neighbors == 3):
@@ -112,23 +112,24 @@ Premièrement car nous n'avions jamais ou très peu utilisé cette immense bibli
 
 * Initialisation de la fenêtre:
 
-  ```
+  ```python
   pg.init()
   pg.display.set_caption('Jeu de la vie')
   ```
 
-```
+```python
 screen = pg.display.set_mode((screen_height, screen_width))
 ```
 
 * Affichage du tableau:
 
-  ```
+  ```python
   surface = pg.surfarray.make_surface(colors[array])
   surface = pg.transform.scale(surface, (size_lin * size_pixel, size_col * size_pixel))
   ```
 
-  ```screen.fill((30,
+  ```python
+  screen.fill((30,
   screen.blit(surface, (0,0))
   pg.display.flip()
   pg.display.flip()
@@ -136,14 +137,14 @@ screen = pg.display.set_mode((screen_height, screen_width))
 
   ⚠️ A noter que pygame utilise un point d'origine différent que ce que l'on s'attent à avoir en regardant notre tableau. il est donc nécéssaire de réaliser une rotation de 90° pour afficher le tableau dans le bon sens.
 
-  ```
+  ```python
   surface = pg.transform.rotate(surface, -90)
 
   ```
 
   On utilise aussi la fonction **time.clock** de pygame pour afficher proprement la grille. On évite comme cela les clignotements lorsque le programme affiche la grille morceau par morceau.
 
-  ```
+  ```python
   clock = pg.time.Clock()
   clock.tick(60)
   ```
@@ -163,14 +164,14 @@ screen = pg.display.set_mode((screen_height, screen_width))
 
 ## Liste de paterns sympathiques:
 
-```
+```python
 densité maximale:
 
 python3 20 20 100
 ```
 
 
-```
+```python
 la grenouille:
 
 [0, 0, 0, 0, 0, 0, 0],
@@ -183,7 +184,7 @@ la grenouille:
 
 ```
 
-```
+```python
 La fleur:
 
 [
