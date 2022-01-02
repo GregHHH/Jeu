@@ -117,9 +117,9 @@ Premièrement car nous n'avions jamais ou très peu utilisé cette immense bibli
   pg.display.set_caption('Jeu de la vie')
   ```
 
-```python
-screen = pg.display.set_mode((screen_height, screen_width))
-```
+  ```python
+  screen = pg.display.set_mode((screen_height, screen_width))
+  ```
 
 * Affichage du tableau:
 
