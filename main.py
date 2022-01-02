@@ -59,19 +59,19 @@ def change_delay(delay):
 		delay = 1
 	return delay
 
-def change_color(color_stat):
-	colors = [0,0,0]
+# def change_color(color_stat):
+# 	colors = [0,0,0]
 
-	if color_stat == 1:
-		color_stat = 2
-		colors = [255, 17, 0]
-	elif color_stat == 2:
-		color_stat = 3
-		colors = [4, 255, 0]
-	elif color_stat == 3:
-		color_stat = 1
-		colors = [21, 0, 255]
-	return (colors, color_stat)
+	# if color_stat == 1:
+	# 	color_stat = 2
+	# 	colors = [255, 17, 0]
+	# elif color_stat == 2:
+	# 	color_stat = 3
+	# 	colors = [4, 255, 0]
+	# elif color_stat == 3:
+	# 	color_stat = 1
+	# 	colors = [21, 0, 255]
+	# return (colors, color_stat)
 
 if (sys.argv[1]) == '-c':
 	array = custom_array
@@ -110,10 +110,15 @@ while running:
 		# On change de couleur en appuyant sur la barre d'espace car c'est rigolo, faut pas chercher plus loin
 		elif event.type == pg.KEYDOWN:
 			if event.key == pg.K_SPACE:
-				color_info = change_color(color_stat)
-				print(color_info)
-				# color_stat = color_info.color_stat
-				# colors[1] = color_info.colors
+				if color_stat == 1:
+					color_stat = 2
+					colors[1] = [255, 17, 0]
+				elif color_stat == 2:
+					color_stat = 3
+					colors[1] = [4, 255, 0]
+				elif color_stat == 3:
+					color_stat = 1
+					colors[1] = [21, 0, 255]
 				
 			if event.key == pg.K_RETURN:
 				delay = change_delay(delay)
