@@ -29,7 +29,6 @@ Pour commencer, il est nécéssaire de choisir la taille de notre grille. Pour c
 python3 main.py {nbr_lignes} {nbr_colonnes} {pourcentage}
 ```
 
-
 ```shell
 python3 main.py 8 2 40
 ```
@@ -47,7 +46,6 @@ python3 main.py -c
 Lors de l'éxecution du programme, il est possible de faire varier **la vitesse d'affichage** en appuyant sur la touche **ENTRER**.
 La **couleur** des cellules vivantes peut varier grâce à la **barre d'espace**.
 
-
 ## Compréhension du code:
 
 #### Partie 1 - Mise en place des grilles de jeu:
@@ -56,7 +54,7 @@ Nous avons mis en place 2 implémentations pour la création des grilles à l'ai
 
 La première, est un simple **array**.
 
-La seconde, utilise la fonction **zeros** de **numpy** afin de créer une grille remplie de 0 aux bonnes dimensions qui ont été récupérées via **argv** de la bibliothèque **sys.** 
+La seconde, utilise la fonction **zeros** de **numpy** afin de créer une grille remplie de 0 aux bonnes dimensions qui ont été récupérées via **argv** de la bibliothèque **sys.**
 
 ```
 size_lin = int(sys.argv[1])
@@ -79,7 +77,6 @@ if r <= density and cpt <= ((lin * col) * density / 100 ):
 ⚠️ À noter que cette technique manque de précision pour les tableaux contenants peu de valeurs mais reste suffisament éfficace pour notre utilisation. (Loi des grands nombres)
 
 Afin d'afficher le plus proprement possible les figures du Jeu de la vie, nous avons dû ajouter une bordure autour de notre tableau précédemment crée. (merci de nous avoir fourni cette partie)
-
 
 #### Partie 2 - Gestion des règles du jeu de la vie
 
@@ -128,6 +125,8 @@ screen = pg.display.set_mode((screen_height, screen_width))
   surface = pg.transform.scale(surface, (size_lin * size_pixel, size_col * size_pixel))
   ```
 
+  **transform.scale** est important afin de voir la grille correctement sachant qu'une cellule = un pixel par defaut
+
   ```screen.fill((30,
   screen.blit(surface, (0,0))
   pg.display.flip()
@@ -169,7 +168,6 @@ densité maximale:
 python3 20 20 100
 ```
 
-
 ```
 la grenouille:
 
@@ -205,8 +203,7 @@ La fleur:
 
 Ci-dessous, les élements que l'ont aurait aimé ajouter en plus dans notre programme ou ce qui aurait pu être amélioré:
 
-
-* la fonction **change_color** ne fonctionne pas correctement, l'implémentation se situe donc direcement dans le main == peu lisible
-* Ajouter un systeme afin de créer une grille aléatoire via la fenètre de pygame
+* la fonction **change_color** ne fonctionne pas correctement, l'implémentation se situe donc directement dans le main == peu lisible
+* Ajouter un systeme afin de créer une grille aléatoire via la fenêtre de pygame
 * Ajouter un menu pour remplacer les raccourcis clavier du changement de vitesse, de couleur ainsi que de supprimer les arguments de lancement qui sont certes fonctionnels mais peu pratiques à utiliser.
 * Parfois, les figurent débordent sur la bordure ce qui les effaces. Il aurait été intéréssant de pouvoir faire varier dynamiquement la taille du tableau pour l'aggrandire lorsque cela est nécessaire afin d'empecher ce problème d'arriver.
