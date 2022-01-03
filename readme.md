@@ -23,7 +23,7 @@ Une cellule possède **huit voisins**, qui sont les cellules adjacentes horizont
 
 ### Étape N°1: Géneration de la grille:
 
-Pour commencer, il est nécéssaire de choisir la taille de notre grille. Pour cela, on éxecute le  fichier main.py avec comme arguments le nombre de lignes, de colonnes et le pourcentage de cellules vivantes lors de la première itération:
+Pour commencer, il est nécéssaire de choisir la taille de notre grille. Pour cela, on execute le  fichier main.py avec comme arguments le nombre de lignes, de colonnes et le pourcentage de cellules vivantes lors de la première itération:
 
 ```shell
 python3 main.py {nbr_lignes} {nbr_colonnes} {pourcentage}
@@ -52,7 +52,7 @@ La **couleur** des cellules vivantes peut varier grâce à la **barre d'espace**
 
 Nous avons mis en place 2 implémentations pour la création des grilles à l'aide de la bibliothèque **numpy**:
 
-La première, est un simple **array**.
+La première, est un **array** classique.
 
 La seconde, utilise la fonction **zeros** de **numpy** afin de créer une grille remplie de 0 aux bonnes dimensions qui ont été récupérées via **argv** de la bibliothèque **sys.**
 
